@@ -1,5 +1,4 @@
 #include "roots.hpp"
-// What does you can also limit iterations to 1e6 to guarantee completion
 
 bool bisection(std::function<double(double)> f,
                double a, double b,
@@ -37,7 +36,7 @@ bool bisection(std::function<double(double)> f,
     *root = midpoint;
     
     return true;
-    // Ask if this method can ever fail DETERMINE LOCAL MAX
+    
 }
 
 bool regula_falsi(std::function<double(double)> f,
@@ -90,8 +89,7 @@ bool newton_raphson(std::function<double(double)> f,
                     std::function<double(double)> g,
                     double a, double b, double c,
                     double *root) {
-    
-    // Is it okay to use multiple return values
+
     
     /* Saying that if the derivative of the function equals zero that this method will 
     not work */
@@ -136,7 +134,7 @@ bool secant(std::function<double(double)> f,
             double a, double b, double c,
             double *root) {
     
-    double SecondGuess = (a+b)/2;  //WHAT IS SECOND GUESS VALUE
+    double SecondGuess = (a+b)/2;
     double xn = SecondGuess;
     double x1 = c;
     
